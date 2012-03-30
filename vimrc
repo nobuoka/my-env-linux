@@ -22,9 +22,10 @@ endif
 " sw: shift width (the number of characters text is moved sideways for the
 "                  shift command (<< and >>))
 :au FileType perl set ts=4 sw=4 expandtab
+:au FileType ruby set ts=2 sw=2 expandtab
+:au FileType javascript set ts=4 sw=4 expandtab
 :au FileType html set ts=2 sw=2 expandtab
 :au FileType css  set ts=4 sw=4 expandtab
-:au FileType javascript set ts=4 sw=4 expandtab
 
 ":set statusline=FORMAT:%{&ff}\ \/\ TYPE:%Y\ /\ ASCII:\%03.3b\ /\ HEX:\%02.2B\ /\ POS:%04l,%04v\ LIN:%L(%p%%)
 ":set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
