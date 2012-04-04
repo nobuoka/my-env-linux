@@ -6,6 +6,9 @@
 :filetype indent on
 :filetype plugin on
 
+" 色付け
+:syntax on
+
 " ----------------------
 " タブ関係
 " ----------------------
