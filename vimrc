@@ -30,9 +30,12 @@ endif
 :au FileType html set ts=2 sw=2 expandtab
 :au FileType css  set ts=4 sw=4 expandtab
 
+" psgi ファイルを perl に
+"autocmd BufNewFile, BufRead *.psgi set filetype=perl
+
 ":set statusline=FORMAT:%{&ff}\ \/\ TYPE:%Y\ /\ ASCII:\%03.3b\ /\ HEX:\%02.2B\ /\ POS:%04l,%04v\ LIN:%L(%p%%)
 ":set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
-:set statusline=[ENC=%{&fileencoding}][FORMAT=%{&ff}][TYPE=%Y][ASCII=\%03.3b][HEX=\%02.2B][POS=%04l,%04v][%p%%][LEN=%L]
+:set statusline=%F%m%r%h%w\ [ENC=%{&fileencoding}][FORMAT=%{&ff}][TYPE=%Y][ASCII=\%03.3b][HEX=\%02.2B][POS=%04l,%04v][%p%%][LEN=%L]
 :set laststatus=2
 
 " InsertLeave したときに IBus をオフにする
