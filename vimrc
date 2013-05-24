@@ -1,3 +1,9 @@
+" バックスペースでインサートモード中で削除したり行頭削除したり
+set backspace=start,eol,indent
+
+" 検索時にハイライトする
+set hlsearch
+
 ":set shiftwidth=4
 " タブと改行を可視化
 :set list
@@ -8,6 +14,9 @@
 
 " 色付け
 :syntax on
+
+" neocomplcache を有効に
+let g:neocomplcache_enable_at_startup = 1
 
 " ----------------------
 " タブ関係
@@ -27,11 +36,22 @@ endif
 :au FileType perl set ts=4 sw=4 expandtab
 :au FileType ruby set ts=2 sw=2 expandtab
 :au FileType javascript set ts=4 sw=4 expandtab
+:au FileType typescript set ts=4 sw=4 expandtab
+:au FileType xml  set ts=2 sw=2 expandtab
 :au FileType html set ts=2 sw=2 expandtab
+:au FileType xhtml set ts=2 sw=2 expandtab
 :au FileType css  set ts=4 sw=4 expandtab
 
+" 拡張子によってファイルタイプを指定する
 " psgi ファイルを perl に
 "autocmd BufNewFile, BufRead *.psgi set filetype=perl
+:autocmd BufNewFile *.t set filetype=perl
+:autocmd BufRead    *.t set filetype=perl
+:autocmd BufNewFile *.enml set filetype=xml
+:autocmd BufRead    *.enml set filetype=xml
+:autocmd BufNewFile *.ts set filetype=typescript
+:autocmd BufRead    *.ts set filetype=typescript
+":au BufRead,BufNewFile *.ts setfiletype typescript
 
 ":set statusline=FORMAT:%{&ff}\ \/\ TYPE:%Y\ /\ ASCII:\%03.3b\ /\ HEX:\%02.2B\ /\ POS:%04l,%04v\ LIN:%L(%p%%)
 ":set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
